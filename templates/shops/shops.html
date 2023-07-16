@@ -1,0 +1,35 @@
+{% extends 'layouts/index.html' %}
+
+{% block content   %}
+    <style type="text/css">
+     .shops{display: flex;
+      justify-content: space-between;
+      width : 80%;
+      margin-left: 10%;
+     padding: 10px;
+     flex-wrap: wrap;}
+
+
+    </style>
+    <h1 class="results-top-title "> shops </h1>
+
+      <div class="            shops  ">
+        {% for i in shops %}
+          <div class="card" style="width: 18rem;">
+              <img src="" class="card-img-top" alt="...">
+               <div class="card-body">
+                   <h5 class="card-title">{{i.title}}</h5>
+                   <span class="results-item-rating">
+                       👍->
+                       <span>{{ i.rate }}</span>
+                   </span>
+                   <h5 class="results-item-year">{{ i.create_data }}</h5>
+                   <h6 class ="result-prize">prize -> {{ i.prize }} </h6>
+                   <a href="/" class="btn btn-primary">More</a>
+               </div>
+           </div>
+        {% endfor %}
+      </div>
+
+        
+{% endblock %}
