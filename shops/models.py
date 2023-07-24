@@ -19,6 +19,7 @@ class Product(models.Model):
     create_data = models.DateTimeField(auto_now_add=True)
     modified_data = models.DateTimeField(auto_now=True)
     catergory = models.ForeignKey(Category, on_delete=models.CASCADE)
+    phone_number = models.FloatField()
 
     def __str__(self):
         return self.title

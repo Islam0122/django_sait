@@ -1,0 +1,30 @@
+{% extends 'layouts/index.html' %}
+
+{% block content   %}
+    <style type="text/css">
+     .category{display: flex;
+      justify-content: space-between;
+      width : 80%;
+      margin-left: 10%;
+     padding: 10px;
+     flex-wrap: wrap;}
+
+
+    </style>
+    <h1 class="results-top-title "> heloo user -> category </h1>
+
+    <div class="category ">
+
+
+          {% for i in category.all%}
+               <a href="/category/">
+                       <p>{{ i.title }}</p>
+               </a>
+          {% endfor %}
+
+
+
+    </div>
+
+
+{% endblock %}

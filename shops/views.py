@@ -21,3 +21,13 @@ def category_view(request):
         category = Category.objects.all()
         context_data = {'category': category}
         return render(request, 'shops/catergory/catergories.html', context=context_data)
+def shops_d_view (request , id ):
+    if request.method =='GET':
+        shop = Product.objects.get(id=id)
+        context_data = {'shops': shop}
+    return render(request, 'shops/detail.html', context=context_data)
+def buy_d_view (request , id ):
+    if request.method =='GET':
+        shop = Product.objects.get(id=id)
+        context_data = {'shops': shop}
+    return render(request, 'shops/buy.html', context=context_data)

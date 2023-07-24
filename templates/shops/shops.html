@@ -1,5 +1,5 @@
 {% extends 'layouts/index.html' %}
-
+{% load static %}
 {% block content   %}
     <style type="text/css">
      .shops{display: flex;
@@ -11,21 +11,27 @@
 
 
     </style>
-    <h1 class="results-top-title "> shops </h1>
+    <h1 class="results-top-title ">
+        <img  style="width: 700px;margin-left: 150px" src="{% static  '5291840136549618071_120.jpg'%}" alt=""
+
+        heloo user ->
+    </h1>
 
       <div class="            shops  ">
         {% for i in shops %}
           <div class="card" style="width: 18rem;">
-              <img src="/media/2023-04-18.png/" class="card-img-top" alt="">
+              <img src="/media/{{ i.img }}" class="card-img-top" alt="">
                <div class="card-body">
                    <h5 class="card-title">{{i.title}}</h5>
+                   <h4 class="results-item-year">category -> {{ i.catergory }}</h4>
                    <span class="results-item-rating">
                        👍->
                        <span>{{ i.rate }}</span>
                    </span>
                    <h5 class="results-item-year">{{ i.create_data }}</h5>
                    <h6 class ="result-prize">prize -> {{ i.prize }} </h6>
-                   <a href="/" class="btn btn-primary">More</a>
+                   <a href="/shops/{{ i.id }}/" class="btn btn-primary">More</a>
+
                </div>
            </div>
         {% endfor %}
