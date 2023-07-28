@@ -2,7 +2,7 @@
 
 {% block content %}
     <style type="text/css">
-        .shop {
+        .shops {
             width: 80%;
             margin-left: 10%;
             padding: 10px;
@@ -20,14 +20,29 @@
             <img src="/media/{{ shops.img }}/" alt="">
         </div>
         <div class="info">
-            <h1>{{ shops.title }}</h1>
-            <h1> Rate: {{ shops.rate }}</h1>
-            <h4> description : {{ shops.description }}</h4>
-            <h5>ЦЕНА -> {{ shops.prize }}</h5>
+            <h1>{{ product.title}}</h1>
+            <h1> Rate: {{ product.rate }}</h1>
+            <h4> description : {{ product.description }}</h4>
+            <h5>ЦЕНА -> {{ product.prize}}</h5>
             <div class="dates">
-                <h4>{{ shops.created_date }}</h4>
-                <h4>{{ shops.modified_date }}</h4>
+                <h4>{{ product.created_date }}</h4>
+                <h4>{{ product.modified_date }}</h4>
             </div>
+            <div class="create_comment">
+                    <form action="/products/{{ product.id }}/" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input style="height: 40px; width: 150px;" type="submit" value="Add comment">
+                    </form>
+            </div>
+                    <div class="comments">
+            {% for comment in comments %}
+                <div class="comment_block">
+                    <h5>{{ comment.text }}</h5>
+                </div>
+            {% endfor %}
+             </div>
+
             <a href="/shops/{{ i.id }}/{{ shops.phone_number }}" class="btn btn-primary"> купить </a>
         </div>
     </div>

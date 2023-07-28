@@ -16,16 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from shops.views import main_view,shops_view,category_view,shops_d_view
+from shops import  views
 from django.conf.urls.static import  static
 from hw import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',main_view),
-    path('shops/', shops_view),
-    path('shops/<int:id>/', shops_d_view),
+    path('', views.main_view),
+    path('shops/', views.shops_view),
+    path('shops/<int:id>/',views.shops_d_view),
+    path('shops/create/', views.create_product_view),
+    path('category/', views.category_view),
+    path('category/create_category/', views.create_category_view),
 
-    path('category/', category_view),
+
 
 ]
 urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
