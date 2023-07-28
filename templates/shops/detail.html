@@ -29,7 +29,7 @@
                 <h4>{{ product.modified_date }}</h4>
             </div>
             <div class="create_comment">
-                    <form action="/products/{{ product.id }}/" method="post">
+                    <form action="/shops/{{ product.id }}/" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <input style="height: 40px; width: 150px;" type="submit" value="Add comment">
