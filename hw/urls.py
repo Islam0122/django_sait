@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from shops import  views
+from user.views import  register_view , login_view , logout_view
 from django.conf.urls.static import  static
 from hw import settings
 urlpatterns = [
@@ -27,6 +28,11 @@ urlpatterns = [
     path('shops/create/', views.create_product_view),
     path('category/', views.category_view),
     path('category/create_category/', views.create_category_view),
+    path('user/register/', register_view),
+    path('user/login/', login_view),
+    path('user/logout/', logout_view),
+
+
 
 
 

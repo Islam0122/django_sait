@@ -17,4 +17,5 @@ class Product_create(forms.Form):
 
 class CommentsCreateForm(forms.Form):
     text = forms.CharField(max_length=355)
+    name = forms.CharField(max_length=20)
 

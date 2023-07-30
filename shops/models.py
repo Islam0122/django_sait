@@ -27,8 +27,10 @@ class Product(models.Model):
 
 class Comment(models.Model):
     text = models.CharField(max_length=255)
+    name = models.CharField(max_length=20)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.text}-> {self.product.title}'
+
 

@@ -13,7 +13,8 @@ def main_view(request):
 def shops_view(request):
     if request.method == 'GET':
         Shops = Product.objects.all()
-        context_data = {'shops': Shops}
+        context_data = {'shops': Shops,
+                        'user': request.user}
         return render(request, 'shops/shops.html', context=context_data)
 
 
@@ -42,6 +43,7 @@ def shops_d_view (request , id ):
         if form.is_valid():
             Comment.objects.create(
                 text=form.cleaned_data.get('text'),
+                name=form.cleaned_data.get('name'),
                 product=product
 
             )

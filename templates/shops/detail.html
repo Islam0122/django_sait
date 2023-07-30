@@ -17,10 +17,10 @@
     </style>
     <div class="shops">
         <div class="image">
-            <img src="/media/{{ shops.img }}/" alt="">
+            <img src="/media/{{ product.img }}/" alt="">
         </div>
         <div class="info">
-            <h1>{{ product.title}}</h1>
+            <h1>{{product.title}}</h1>
             <h1> Rate: {{ product.rate }}</h1>
             <h4> description : {{ product.description }}</h4>
             <h5>ЦЕНА -> {{ product.prize}}</h5>
@@ -38,7 +38,7 @@
                     <div class="comments">
             {% for comment in comments %}
                 <div class="comment_block">
-                    <h5>{{ comment.text }}</h5>
+                    <h5>{{ comment.name }} / -> {{ comment.text }}</h5>
                 </div>
             {% endfor %}
              </div>
