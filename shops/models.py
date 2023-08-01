@@ -14,11 +14,11 @@ class Product(models.Model):
     title = models.CharField(max_length=24)
     description = models.TextField(blank=True, null=True)
     rate = models.FloatField()
-    prize = models.FloatField(max_length=1000000)
+    prize = models.IntegerField(max_length=1000000)
     create_data = models.DateTimeField(auto_now_add=True)
     modified_data = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    phone_number = models.FloatField()
+    phone_number = models.IntegerField()
 
 
     def __str__(self):

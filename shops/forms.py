@@ -12,8 +12,8 @@ class Product_create(forms.Form):
     description = forms.CharField(widget=forms.Textarea)
     rate = forms.FloatField()
     category = forms.ModelChoiceField(queryset=models.Category.objects.all())
-    prize = forms.FloatField()
-    phone_number = forms.FloatField()
+    prize = forms.IntegerField()
+    phone_number = forms.IntegerField()
 
 class CommentsCreateForm(forms.Form):
     text = forms.CharField(max_length=355)
