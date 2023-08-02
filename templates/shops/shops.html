@@ -11,10 +11,14 @@
 
 
     </style>
+     <form action="/shops" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
     <h1 class="results-top-title ">
         <img  style="width: 700px;margin-left: 150px" src="{% static  '5291840136549618071_120.jpg'%}" alt=""
-
-        heloo user ->
+>
+        heloo user ->>
     </h1>
 
       <div class="            shops  ">
@@ -36,6 +40,12 @@
            </div>
         {% endfor %}
       </div>
-
+      <div class="pages">
+        {% for page in pages %}
+            <a href="/shops/?page={{ page }}">
+                <button>{{ page }}</button>----->
+            </a>
+        {% endfor %}
+      </div>
         
 {% endblock %}
